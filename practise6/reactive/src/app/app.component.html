@@ -1,0 +1,25 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+ <form [formGroup]='signupForm' (ngSubmit)="postData(signupForm)">
+	<div class="form-group">
+		<input type="text" formControlName="fname" placeholder="First Name">
+	</div>
+	<div class="form-group">
+		<input type="text" formControlName="lname" placeholder="Last Name">
+	</div>
+	<div class="form-group">
+		<input type="text" formControlName="Emailid" placeholder="email">
+	</div>
+	<div class="form-group">
+		<input type="password" formControlName="userpassword" placeholder="Put Ur Password">
+	</div>
+	<div class="form-group">
+		<input type="submit" value="Post Data" [disabled]='!signupForm.valid'>
+	</div>
+ </form>
+ <a [routerLink]="['/company']" routerLinkActive="router-link-active" >company</a>
+<!-- <app-test></app-test> -->
+<router-outlet></router-outlet>

@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+
+  <h2>{{test}}</h2>
+  <table>
+    <tr *ngFor = "let emp of emp">
+      <td>Emp code</td>{{emp.empcode}}
+      <td>Name </td>{{emp.name}}
+    </tr>
+  </table>
+<br>
+<a [routerLink]="['employee']">employee</a>
+
+<router-outlet></router-outlet>

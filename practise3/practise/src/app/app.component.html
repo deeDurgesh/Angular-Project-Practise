@@ -1,0 +1,35 @@
+<!-- <p>this is going to red from inner css.</p>
+<button (click)=btnClick()>click me</button>
+<p [ngStyle] = "{'color':'yellow'}">this will going to yellow</p>
+
+<h2>this is for ngIf</h2>
+<input type="checkbox" name="true" (click)=changeValue(true)>true
+<input type="checkbox" name="false" (click) = changeValue(false)>false
+
+<div *ngIf ="isValid ; else elseBlock">
+    this is for isValid.
+</div>
+
+<ng-template #elseBlock>
+    <div>
+        this is for invalid from else block.
+    </div>
+</ng-template> -->
+
+<h1>
+    welcome to {{title}}
+</h1>
+
+<h2>Track By Example</h2>
+
+<table>
+    <tr *ngFor='let student of Student; let i=index;'>
+        <td>{{i+1}}</td>
+        <td>{{student.name}}</td>
+        <td>{{student.course}}</td>
+        <td>{{student.lname}}</td>
+        <td>{{student.age}}</td>
+    </tr>
+</table>
+
+<router-outlet></router-outlet>

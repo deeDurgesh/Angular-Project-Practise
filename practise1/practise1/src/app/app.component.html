@@ -1,0 +1,87 @@
+ <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <h2>
+    Grouping by example
+  </h2>
+  <ul *ngFor="let group of Countrydetails">
+    <li>
+      {{group.country}}
+    </li>
+    <ul>
+        <li *ngFor="let person of group.people">
+            {{person.name}}
+          </li>
+    </ul> 
+  </ul>
+
+  <h2>NgStyle example</h2>
+  <ul *ngFor="let person of people">
+    <li [ngStyle]="{'color': getColor(person.country)}">
+      {{person.name}} - {{person.country}}
+    </li>
+  </ul>
+
+  <h2>ngClass example</h2>
+  <p [ngClass]="'one two'">using ngclass with string example</p>
+  <div *ngFor="let user of users" [ngClass]="'three four'">
+    {{user}}
+  </div>
+<p [ngClass]="{'one':true,'three':false}">Example using ngClass as object</p>
+
+<div [ngClass]="getCssClass('mode')">
+  example using ngClass with component method</div>
+<span [innerHTML]='title'></span>
+
+FirstName:<span [innerHTML]='fname'></span>
+<button (click)='showMessage()'> click me</button>
+  
+<input [value]='data'  (input)='data = $event.target.value'>
+ input1: {{data}}
+<input [(ngModel)]='data1'>
+Entered name is:{{data1}}
+
+<h2>pipe example</h2>
+<table border="1" >
+  <tr>
+    <th>Emp code</th>
+    <th>Emp name</th>
+    <th>Emp salary</th>
+  </tr>
+  <tr *ngFor = 'let emp of employee'>
+    <td>{{emp.code}}</td>
+    <td>{{emp.name | uppercase}}</td>
+    <td>{{emp.salary}}</td>
+  </tr>
+</table>
+
+<h2>Custom pipe example</h2>
+<table border="1">
+<tr *ngFor="let emp1 of employee1">
+  <td>{{emp1.code}}</td>
+  <td>{{emp1.name | mypipe:emp1.gender}}</td>
+  <td>{{emp1.gender}}</td>
+  <td>{{emp1.salary}}</td>
+</tr>
+</table>
+
+<h2>Router Link Example</h2>
+<a [routerLink]="['/student']" routerLinkActive="router-link-active" >student</a>
+<br>
+
+<br>
+<a [routerLink]= "['/parentdetails']">parentdetails</a>
+<br>
+<br>
+<button (click) = 'student()'>show student</button>
+
+<br>
+<br>
+<a [routerLink]="['/employee']">employee</a>
+
+
+<div>
+  <router-outlet></router-outlet>
+</div>
+
+ 
